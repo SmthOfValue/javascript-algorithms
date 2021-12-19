@@ -6,9 +6,18 @@
  * массив чисел, содержащихся в обоих исходных массивах.
  * 
 */
-
+//использую создание уникального массива из задачи 06
 function intersection(arr1, arr2) {
-    // Напишите код здесь
+    const uniqArr1 = arr1.filter(function (number, index, arr1) {
+        return arr1.lastIndexOf(number) === index;
+      });
+    const uniqArr2 = arr2.filter(function (number, index, arr2) {
+        return arr2.lastIndexOf(number) === index;
+      });
+    const intersection = uniqArr1.filter(item => {
+        return uniqArr2.includes(item);
+    })
+    return intersection;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:

@@ -9,7 +9,17 @@
 */
 
 function sumOfTwo(arr, sum) {
-    // Напишите код здесь
+    let result = false;
+//для каждого элемента массива проводится сравнение суммы этого элемента и каждого другого элемента массива с sum. Если хотя бы одно сравнение дает true, функция возвращает true
+    arr.forEach(element => {
+        const arrWithoutElement = arr.slice(0,arr.indexOf(element)).concat(arr.slice(arr.indexOf(element)+1));
+        if (arrWithoutElement.some(otherElement => {
+            return element + otherElement === sum;
+        })) {
+            result = true;
+            }
+    });
+    return result;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
