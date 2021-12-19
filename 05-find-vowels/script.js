@@ -10,7 +10,15 @@
 */
 
 function findVowels(str) {
-    // Напишите код здесь
+    const vowels = ['а', 'я', 'о', 'ё', 'у', 'ю', 'ы', 'и', 'э', 'е'];
+    const strArr = str.split('');
+    let vowelCount = 0;
+    strArr.forEach(character => {
+        if (vowels.includes(character.toLowerCase())) {
+            vowelCount+=1;
+        }
+    });
+    return vowelCount;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
