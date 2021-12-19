@@ -14,8 +14,8 @@
 */
 
 function palindrome(str) {
-    strArr = str.split('');
-    reversedStr = strArr.reverse().join('');
+    const strArr = str.split('');
+    const reversedStr = strArr.reverse().join('');
     return (str.toLowerCase() === reversedStr.toLowerCase());
 }
 
